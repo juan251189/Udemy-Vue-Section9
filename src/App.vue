@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-quote>
+      <h2 slot="title">{{quoteTitle}}</h2>
+      <span slot="subtitle">Some Subtitle</span>
+      <p slot="content">A wonderful quote</p>
+      <button @click="quoteTitle='A wonderful Quote'">change quote</button>
+    </app-quote>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Quote from './components/Quote.vue'
 export default {
   name: 'App',
+  data(){
+    return{
+    quoteTitle:'Erase the word dont'
+}  },
   components: {
-    HelloWorld
+    appQuote:Quote
   }
 }
 </script>
